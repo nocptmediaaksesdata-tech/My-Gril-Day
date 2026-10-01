@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy National My Girl Day! 💖</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #fff0f5, #ffc0cb);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 420px;
+            width: 100%;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            transition: all 0.5s ease;
+        }
+        .foto {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff69b4;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #d11a5b;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            height: 50px;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #btn-mau, #btn-surat {
+            background-color: #ff69b4;
+            color: white;
+            box-shadow: 0 5px 10px rgba(255, 105, 180, 0.4);
+        }
+        #btn-mau:hover, #btn-surat:hover {
+            transform: scale(1.05);
+            background-color: #ff1493;
+        }
+        #btn-ga {
+            background-color: #aaa;
+            color: white;
+            position: absolute;
+        }
+        /* Hujan Hati & Efek */
+        .heart {
+            position: fixed;
+            top: -20px;
+            z-index: 1;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+        .hidden { display: none !important; }
+        
+        /* Gaya Pop-up Long Text */
+        .surat-box {
+            text-align: left;
+            background: #fff9fa;
+            border-left: 4px solid #ff69b4;
+            padding: 15px;
+            border-radius: 10px;
+            max-height: 250px;
+            overflow-y: auto;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #444;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Musik Latar -->
+    <audio id="musik-romantis" src="musik.mp3" loop></audio>
+
+    <!-- KONTEN 1: Pertanyaan Awal -->
+    <div class="container" id="konten-utama">
+        <img src="pacar.jpg" alt="My Girl" class="foto">
+        <h1>Happy National My Girl Day! 🤍</h1>
+        <p>Hari ini harinya kamu, tapi buat aku setiap hari itu spesial karena ada kamu. Makasih ya udah jadi *my girl* yang paling sabar dan paling lucu!</p>
+        <p><strong>Kamu janji bakal sama aku terus kan? 🥺</strong></p>
+        <div class="btn-group">
+            <button id="btn-mau" onclick="tampilkanPesan()">Janji Banget! 🥰</button>
+            <button id="btn-ga" onmouseover="hindariTombol()" onclick="hindariTombol()">Enggak</button>
+        </div>
+    </div>
+
+    <!-- KONTEN 2: Halaman Sukses & Tombol Surat -->
+    <div class="container hidden" id="konten-sukses">
+        <img src="pacar.jpg" alt="My Girl" class="foto">
+        <h1>Yayyy! Love You, My Girl! 💖</h1>
+        <p>I'm so lucky to have you. Jangan bosen-bosen sama aku yaaa! Karena kamu udah janji, aku punya surat panjang nih buat kamu...</p>
+        <button id="btn-surat" onclick="bukaSurat()">Baca Surat Cinta ✉️</button>
+        
+        <!-- Kolom Long Text (Silakan edit teks panjangnya di bawah ini) -->
+        <div id="surat-panjang" class="surat-box hidden">
+            <p><strong>Hai sayangku, my girl, si cantik favoritku...</strong></p>
+            <p>Selamat National My Girl Day yaa! Lewat web sederhana ini, aku cuma mau billing terima kasih banyak buat segalanya. Makasih udah hadir di hidup aku, makasih udah jadi orang yang selalu dengerin keluh kesah aku, dan makasih udah bertahan sama aku yang kadang keras kepala atau kekanak-kanakan ini. 🥺</p>
+            <p>Aku bersyukur banget setiap hari bisa kenal dan milikin kamu. Kamu itu alasan kenapa hari-hari aku yang capek bisa berubah jadi senyuman lagi. Jangan pernah ngerasa sendirian ya, karena ada aku yang bakal selalu siap dukung kamu, nemenin kamu jajan, nemenin kamu nangis, atau sekadar dengerin cerita random kamu seharian.</p>
+            <p>Tetap jadi *my girl* yang aku kenal yaa. Semoga kita bisa terus ngelewatin banyak hal bareng-bareng, makin dewasa bareng, dan semoga cita-cita kita bisa terwujud satu per satu. I love you so much, more than words can say! 🌹✨</p>
+        </div>
+    </div>
+
+    <script>
+        // Efek Hujan Emoji
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            const emojis = ['❤️', '💖', '🌸', '✨'];
+            heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+
+        // Tombol Kabur
+        function hindariTombol() {
+            const btnGa = document.getElementById('btn-ga');
+            const x = Math.random() * (window.innerWidth - btnGa.offsetWidth - 50);
+            const y = Math.random() * (window.innerHeight - btnGa.offsetHeight - 50);
+            btnGa.style.position = 'fixed';
+            btnGa.style.left = x + 'px';
+            btnGa.style.top = y + 'px';
+        }
+
+        // Pindah ke Konten Sukses
+        function tampilkanPesan() {
+            document.getElementById('konten-utama').classList.add('hidden');
+            document.getElementById('konten-sukses').classList.remove('hidden');
+            document.getElementById('musik-romantis').play().catch(e => console.log("Musik butuh klik"));
+        }
+
+        // Munculin Long Text
+        function bukaSurat() {
+            const surat = document.getElementById('surat-panjang');
+            const btn = document.getElementById('btn-surat');
+            surat.classList.remove('hidden');
+            btn.classList.add('hidden'); // Sembunyikan tombol setelah diklik
+        }
+    </script>
+</body>
+</html>
